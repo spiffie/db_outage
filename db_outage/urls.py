@@ -1,7 +1,7 @@
-"""Urls definitions for db_outage app."""
-
-# db_outage/urls.py
 # coding: utf-8
+# db_outage/urls.py
+
+"""Urls definitions for db_outage app."""
 
 
 from django.conf.urls import url

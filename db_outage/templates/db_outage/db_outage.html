@@ -26,24 +26,7 @@
 
 <div id="header"> <!-- HEADER -->
     <div id="mainnavtext"> <!-- MAINNAVTEXT -->
-        <!--<ul>
-            <li>
-                <a href="{{ webagent_url }}/utdirect/help/index.WBX?c=0" onclick="utd_openNPW('{{ webagent_url }}/utdirect/help/index.WBX?c=0','win','height=400,width=500,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no'); return false;">UT Direct Help</a>
-            </li>
-            <li class="last_item">
-                <a href="{{ webagent_url }}/security-443/logoff.cgi?goto=http://www.utexas.edu">Logoff</a>
-            </li>
-            <li class="last_item">
-                <a href="{{ webagent_url }}/utdirect/index.WBX?t=MYHOME" title="My Home Tab" accesskey="1">
-                    <img alt="UT Direct Home" title ="UT Direct Home" src="{{ webagent_url }}/utdirect/system/images/home.png"/>
-                </a>
-            </li>
-            <li class="last_item">
-                <a id="search_link" href="#">
-                    <img alt="Search UT Direct" title ="Search UT Direct" src="{{ webagent_url }}/utdirect/system/images/search.png"/>
-                </a>
-            </li>
-        </ul>-->
+
     </div> <!-- MAINNAVTEXT CLOSE -->
     <div id="search_display">   <!-- SEARCH_DISPLAY -->
         <form name="utd_search" id="search_form" action="{{ webagent_url }}/utdirect/search/index.WBX" method="get">
@@ -80,9 +63,9 @@
 <div id="utd_container">  <!-- UTD_CONTAINER -->
     <h1 class="highlight1">Service Unavailable (503)</h1>
 
-    <h2>We are experiencing technical difficulties.</h2>
-
     {% if vipr_outage %}
+    <h2>We are our upgrading our systems.</h2>
+
     <p>VIP and associated Office of Development applications are currently down for planned database and backend maintainence. We expect to return to normal service before the end of the day.</p>
 
     <p>Please review the following alternative options for service:</p>
@@ -92,19 +75,17 @@
         <dd>
             <ul>
                 <li>Our Gift &amp; Data Services Team or your normal college development staff are always happy to accept gifts via check if mailed.</li>
-                <li>If you would like to give a credit card gift, you can do so <a>via our alternate giving portal</a>.</li>
-                <li>(Maybe some other things?)</li>
+                <li>If you would like to give a credit card gift, you can do so via <a href="https://utdirect.utexas.edu/apps/utgiving/online/nlogon/" title="University of Texas Online Giving">our online giving portal</a>.</li>
             </ul>
         </dd>
 
-        <dt>(Here would go other service types)</dt>
-        <dd>(And other service options.)</dd>
-
         <dt>If this is to report a different problem or question with this application, or for more details on this outage:</dt>
-        <dd>Please contact {{ contact }}.</dd>
+        <dd>Please contact <a href="mailto:{{ contact }}">{{ contact }}</a>.</dd>
     </dl>
     {% else %}
-    <p>VIP and associated Office of Development applications are currently down due to technical problems. You are not at fault. The Office of Development Programming Team is notified in the event of outages such as this and are probably already looking into the problem. However, if the problem persists or if you feel you have received this message in error, please contact {{ contact }} to report the problem.</p>
+    <h2>We are experiencing technical difficulties.</h2>
+
+    <p>VIP and associated Office of Development applications are currently down due to technical problems. You are not at fault. The Office of Development Programming Team is notified in the event of outages such as this and are probably already looking into the problem. However, if the problem persists or if you feel you have received this message in error, please contact <a href="mailto:{{ contact }}">{{ contact }}</a> to report the problem.</p>
     {% endif %}
 
     <p>We apologize for the inconvenience; thank you for your patience.</p>
