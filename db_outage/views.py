@@ -10,8 +10,6 @@ from django.template.response import TemplateResponse
 from django.views.generic.base import TemplateView
 from django.conf import settings
 
-from db_outage.constants import IS_SCHEDULED_OUTAGE
-
 
 __author__ = 'David Voegtle (dvoegtle@austin.utexas.edu)'
 
@@ -33,7 +31,6 @@ class DBOutage(TemplateView):
         context = super(DBOutage, self).get_context_data(**kwargs)
         context.update({
             'contact': getattr(settings, 'SECU_FAILED_CONTACT_EMAIL', 'viphelp@austin.utexas.edu'),
-            'vipr_outage': IS_SCHEDULED_OUTAGE,
         })
 
         return context

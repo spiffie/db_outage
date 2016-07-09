@@ -63,10 +63,9 @@
 <div id="utd_container">  <!-- UTD_CONTAINER -->
     <h1 class="highlight1">Service Unavailable (503)</h1>
 
-    {% if vipr_outage %}
-    <h2>We are our upgrading our systems.</h2>
+    <h2>We are experiencing technical difficulties.</h2>
 
-    <p>VIP and associated Office of Development applications are currently down for planned database and backend maintainence. We expect to return to normal service before the end of the day.</p>
+    <p>VIP and associated Office of Development applications are currently down due to technical problems. You are not at fault. The Office of Development Programming Team is notified in the event of outages such as this and are probably already looking into the problem.</p>
 
     <p>Please review the following alternative options for service:</p>
 
@@ -82,11 +81,6 @@
         <dt>If this is to report a different problem or question with this application, or for more details on this outage:</dt>
         <dd>Please contact <a href="mailto:{{ contact }}">{{ contact }}</a>.</dd>
     </dl>
-    {% else %}
-    <h2>We are experiencing technical difficulties.</h2>
-
-    <p>VIP and associated Office of Development applications are currently down due to technical problems. You are not at fault. The Office of Development Programming Team is notified in the event of outages such as this and are probably already looking into the problem. However, if the problem persists or if you feel you have received this message in error, please contact <a href="mailto:{{ contact }}">{{ contact }}</a> to report the problem.</p>
-    {% endif %}
 
     <p>We apologize for the inconvenience; thank you for your patience.</p>
 </div>

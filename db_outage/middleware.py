@@ -19,7 +19,6 @@ from django.core.mail import mail_admins
 from django.db import connections
 from django.db.utils import DatabaseError as django_DatabaseError
 
-from db_outage.constants import IS_SCHEDULED_OUTAGE
 from db_outage.views import DBOutage
 
 
@@ -71,8 +70,7 @@ class DBOutageMiddleware(object):
                 get_printable_traceback(),
                 str(exc)
             ])
-            if not IS_SCHEDULED_OUTAGE:
-                mail_admins('DatabaseError', msg)
+            mail_admins('DatabaseError', msg, fail_silently=True)
             logger.error(msg)
             return DBOutage.as_view()(request)
 
